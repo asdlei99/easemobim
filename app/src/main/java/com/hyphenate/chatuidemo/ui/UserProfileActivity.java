@@ -30,7 +30,6 @@ import com.hyphenate.easeui.utils.EaseUserUtils;
 
 import java.io.ByteArrayOutputStream;
 
-import cn.sharesdk.socialization.FurmActivity;
 
 /**
  * ========================================
@@ -63,7 +62,6 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
     private TextView tvUsername;
     private ProgressDialog dialog;
     private RelativeLayout rlNickName;
-    private RelativeLayout rlFurm;
 
 
     @Override
@@ -80,7 +78,6 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
         tvUsername = (TextView) findViewById(R.id.user_username);
         tvNickName = (TextView) findViewById(R.id.user_nickname);
         rlNickName = (RelativeLayout) findViewById(R.id.rl_nickname);
-        rlFurm = (RelativeLayout) findViewById(R.id.rl_furm);
         iconRightArrow = (ImageView) findViewById(R.id.ic_right_arrow);
     }
 
@@ -92,7 +89,6 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
             headPhotoUpdate.setVisibility(View.VISIBLE);
             iconRightArrow.setVisibility(View.VISIBLE);
             rlNickName.setOnClickListener(this);
-            rlFurm.setOnClickListener(this);
             headAvatar.setOnClickListener(this);
         } else {
             headPhotoUpdate.setVisibility(View.GONE);
@@ -133,10 +129,6 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
                                 updateRemoteNick(nickString);
                             }
                         }).setNegativeButton(R.string.dl_cancel, null).show();
-                break;
-            case R.id.rl_furm:
-                Intent intent = new Intent(UserProfileActivity.this, FurmActivity.class);
-                startActivity(intent);
                 break;
             default:
                 break;
